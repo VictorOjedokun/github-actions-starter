@@ -17,7 +17,11 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          cd node-app
+          npm install
 
       - name: Run Tests
-        run: npm test
+        run: |
+          cd node-app
+          npm test
