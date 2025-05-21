@@ -22,7 +22,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: Lint with flake8
-        run: flake8 .
+        run: |
+          cd python-app
+          flake8 .
 
       - name: Run tests with pytest
-        run: pytest
+        run: |
+          cd python-app
+          pytest
