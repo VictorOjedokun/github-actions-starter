@@ -1,4 +1,6 @@
-from app import multiply
-
-def test_multiply():
-    assert multiply(2, 3) == 6
+1| from app import multiply
+2| 
+3| 
+4| def test_multiply():
+5|     assert multiply(2, 3) == 6
+6| 
