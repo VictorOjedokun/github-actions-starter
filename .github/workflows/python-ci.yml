@@ -8,6 +8,10 @@ jobs:
   lint-and-test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: python-app
+
     steps:
       - uses: actions/checkout@v3
 
@@ -17,16 +21,10 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          cd python-app
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Lint with flake8
-        run: |
-          cd python-app
-          flake8 .
+        run: flake8 .
 
       - name: Run tests with pytest
-        run: |
-          cd python-app
-          pytest
+        run: pytest -v
